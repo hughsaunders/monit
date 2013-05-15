@@ -27,7 +27,7 @@ else
 end
 
 package "monit" do
-  action :install
+  action node["osops"]["do_package_upgrades"] == true ? :upgrade : :install
   options pkg_options
 end
 
